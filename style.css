@@ -8,6 +8,15 @@ body{
     font-family: "Roboto",sans-serif;
 }
 
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
 .title{
     margin-left: auto;
     margin-right: auto;
@@ -70,27 +79,33 @@ td:hover{
 
 .dice-1{
     background-image: url(./images/diceOne.png);
+    animation: tilt-shaking 0.25s;
 }
 
 .dice-2{
     background-image: url(./images/diceTwo.png);
+    animation: tilt-shaking 0.25s;
 }
 
 .dice-3{
     background-image: url(./images/diceThree.png);
+    animation: tilt-shaking 0.25s;
 }
 
 .dice-4{
     background-image: url(./images/diceFour.png);
+    animation: tilt-shaking 0.25s;
 
 }
 
 .dice-5{
     background-image: url(./images/diceFive.png);
+    animation: tilt-shaking 0.25s;
 }
 
 .dice-6{
     background-image: url(./images/diceSix.png);
+    animation: tilt-shaking 0.25s;
 }
 
 .selected{
@@ -144,3 +159,6 @@ input[type=button]:hover{
 .selectClicked{
     background-color: lightsalmon !important;
 }
+
+
+

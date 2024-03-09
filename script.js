@@ -73,6 +73,10 @@ function tableClick(event) {
                 clickedElement.classList.remove("dice-5");
                 clickedElement.classList.remove("dice-6");
                 clickedElement.classList.add("dice-" + random);
+                //For animation restart
+            const elm = dice;
+            var newone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(newone, elm);
                 updateResults();
             } else {
                 clickedElement.classList.add("selected");
@@ -104,6 +108,11 @@ function rerollSelected() {
         dice.classList.remove("dice-5");
         dice.classList.remove("dice-6");
         dice.classList.add("dice-" + random);
+        //For animation restart
+        const elm = dice;
+        var newone = elm.cloneNode(true);
+        elm.parentNode.replaceChild(newone, elm);
+        
         updateResults();
     });
     selectDice()
@@ -126,6 +135,10 @@ function rerollWithValue() {
             dice.classList.remove("dice-5");
             dice.classList.remove("dice-6");
             dice.classList.add("dice-" + random);
+            //For animation restart
+            const elm = dice;
+            var newone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(newone, elm);
             updateResults();
         }
     });
