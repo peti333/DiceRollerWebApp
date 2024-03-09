@@ -1,15 +1,33 @@
+// I N P U T S
+
 const table = document.querySelector("#table")
 const numOfDice = document.querySelector("#numOfDice")
 const rollButton = document.querySelector("#rollButton")
+const selectButton = document.querySelector("#selectButton");
+const rerollSelectedButton = document.querySelector("#rerollSelectedButton");
+const rerollValueInput = document.querySelector("#rerollValue");
+const resultsOutput = document.querySelector("#results");
+const rerollButton = document.querySelector("#rerollButton")
 
+// E V E N T S
+
+table.addEventListener("click", tableClick);
+rollButton.addEventListener("click", rollTable);
+selectButton.addEventListener("click", selectDice);
+rerollSelectedButton.addEventListener("click", rerollSelected);
+rerollButton.addEventListener("click", rerollWithValue);
 rollButton.addEventListener("click",rollTable)
 
+// G L O B A L  V A R I A B L E S
 
+let selectedDice = [];
+let selectButtonClicked = false;
+
+// F U N C T I O N S
 
 function rollTable(e){
 
     table.innerHTML = ""
-    //table.addEventListener("click",onTableClick)
     let num = parseInt(numOfDice.value)
     const rowNumber = Math.ceil(num / 10)
     const colNumber = num > 10 ? 10 : num
@@ -21,10 +39,10 @@ function rollTable(e){
         let newRow = table.insertRow()
         for(let j = 0; j < colNumber; j++){
             let newCol = document.createElement("td")
-            let random = Math.floor(Math.random() * 6) + 1; // Add 1 to get numbers from 1 to 6
+            let random = Math.floor(Math.random() * 6) + 1; 
             newCol.dataset.value = random;
-            newCol.classList.add("dice-" + random); // Add a class to style the cell based on the rolled number
-            newRow.appendChild(newCol); // Append the newCol directly to newRow
+            newCol.classList.add("dice-" + random);
+            newRow.appendChild(newCol); 
 
         }
     }
@@ -33,20 +51,6 @@ function rollTable(e){
 
 }
 
-
-const selectButton = document.querySelector("#selectButton");
-const rerollSelectedButton = document.querySelector("#rerollSelectedButton");
-const rerollValueInput = document.querySelector("#rerollValue");
-const resultsOutput = document.querySelector("#results");
-const rerollButton = document.querySelector("#rerollButton")
-let selectedDice = [];
-let selectButtonClicked = false; // Define selectButtonClicked variable
-
-table.addEventListener("click", tableClick);
-rollButton.addEventListener("click", rollTable);
-selectButton.addEventListener("click", selectDice);
-rerollSelectedButton.addEventListener("click", rerollSelected);
-rerollButton.addEventListener("click", rerollWithValue);
 
 function tableClick(event) {
     const clickedElement = event.target;
