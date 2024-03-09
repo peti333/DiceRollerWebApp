@@ -25,31 +25,32 @@ let selectButtonClicked = false;
 
 // F U N C T I O N S
 
-function rollTable(e){
+function rollTable(e) {
+    table.innerHTML = "";
+    let num = parseInt(numOfDice.value);
 
-    table.innerHTML = ""
-    let num = parseInt(numOfDice.value)
-    const rowNumber = Math.ceil(num / 10)
-    const colNumber = num > 10 ? 10 : num
+    
+    const colNumber = Math.min(num, 10); 
+    const rowNumber = Math.ceil(num / 10); 
 
-    let random = 0
+    let remainingDice = num;
 
-    for(let i = 0; i < rowNumber; i++){
-        
-        let newRow = table.insertRow()
-        for(let j = 0; j < colNumber; j++){
-            let newCol = document.createElement("td")
-            let random = Math.floor(Math.random() * 6) + 1; 
-            newCol.dataset.value = random;
-            newCol.classList.add("dice-" + random);
-            newRow.appendChild(newCol); 
-
+    for (let i = 0; i < rowNumber; i++) {
+        let newRow = table.insertRow();
+        for (let j = 0; j < colNumber; j++) {
+            if (remainingDice > 0) { 
+                let newCol = document.createElement("td");
+                let random = Math.floor(Math.random() * 6) + 1;
+                newCol.dataset.value = random;
+                newCol.classList.add("dice-" + random);
+                newRow.appendChild(newCol);
+                remainingDice--;
+            }
         }
     }
-    updateResults()
-
-
+    updateResults();
 }
+
 
 
 function tableClick(event) {
