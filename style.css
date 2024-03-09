@@ -111,6 +111,7 @@ td:hover{
 input[type=number] {
     color:white;
     background-color: rgb(255, 126, 212);
+    border:5px rgb(255, 62, 165);
     font-size: large;
     width: 100%;
     padding: 12px 20px;
