@@ -1,0 +1,145 @@
+body{
+    background: linear-gradient(to bottom right,rgb(100, 32, 170),lightsalmon);
+    background-attachment: fixed;
+    background-color:rgb(100, 32, 170);
+    color:white;
+    font-style: normal;
+    font-weight: 100;
+    font-family: "Roboto",sans-serif;
+}
+
+.title{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    font-family: "roboto",sans-serif;
+    width: 10em;
+    height: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+button {
+    position: absolute;
+    margin: auto;
+    width: 100px;
+}
+
+
+tr{
+    height: 3.4em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+td {
+    text-align: center;
+    font-size: 1em;
+    padding:2em;
+    color:rgb(255, 181, 218);
+    margin:0;
+    padding: 0;
+    display: inline-block;
+    border: solid 3px rgb(100, 32, 170);
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    background-size: contain;
+}
+
+form{
+    margin:auto;
+    height: 15em;
+    width: 20em;
+}
+
+td:hover{
+    background-color: rgb(73, 73, 73);
+}
+
+.dice-1{
+    background-image: url(./images/diceOne.png);
+}
+
+.dice-2{
+    background-image: url(./images/diceTwo.png);
+}
+
+.dice-3{
+    background-image: url(./images/diceThree.png);
+}
+
+.dice-4{
+    background-image: url(./images/diceFour.png);
+
+}
+
+.dice-5{
+    background-image: url(./images/diceFive.png);
+}
+
+.dice-6{
+    background-image: url(./images/diceSix.png);
+}
+
+.selected{
+    border-color: lightsalmon;
+}
+
+#results {
+    list-style-type: none;
+    text-align: center; 
+}
+
+#results li {
+    font-size: x-large;
+    display: block; 
+    margin: 0 10px;
+}
+
+input[type=number] {
+    color:white;
+    background-color: rgb(255, 126, 212);
+    font-size: large;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+
+input[type=number]:focus {
+    color:white;
+    background-color: rgb(207, 82, 165);
+}
+
+input[type=button]{
+    font-size: x-large;
+    background-color: rgb(255, 62, 165); 
+    color: white;
+    border:5px rgb(255, 62, 165);
+    border-radius: 8px;
+}
+
+input[type=button]:hover{
+    background-color: lightsalmon;
+}
+
+.buttonName{
+    font-size: x-large;
+}
+
+.selectClicked{
+    background-color: lightsalmon !important;
+}
