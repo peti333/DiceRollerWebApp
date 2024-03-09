@@ -62,7 +62,7 @@ function tableClick(event) {
         } else {
             // If the select button wasn't clicked, reroll the dice
             if (!selectButtonClicked) {
-               
+
                 const random = Math.floor(Math.random() * 6) + 1;
                 clickedElement.dataset.value = random;
                 clickedElement.classList.remove("selected");
@@ -74,9 +74,9 @@ function tableClick(event) {
                 clickedElement.classList.remove("dice-6");
                 clickedElement.classList.add("dice-" + random);
                 //For animation restart
-            const elm = dice;
-            var newone = elm.cloneNode(true);
-            elm.parentNode.replaceChild(newone, elm);
+                const elm = clickedElement;
+                var newone = elm.cloneNode(true);
+                elm.parentNode.replaceChild(newone, elm);
                 updateResults();
             } else {
                 clickedElement.classList.add("selected");
