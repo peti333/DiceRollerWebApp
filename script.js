@@ -65,14 +65,10 @@ function tableClick(event) {
             if (!selectButtonClicked) {
 
                 const random = Math.floor(Math.random() * 6) + 1;
+                diceClass = "dice-" + clickedElement.dataset.value
                 clickedElement.dataset.value = random;
+                clickedElement.classList.remove(diceClass)
                 clickedElement.classList.remove("selected");
-                clickedElement.classList.remove("dice-1");
-                clickedElement.classList.remove("dice-2");
-                clickedElement.classList.remove("dice-3");
-                clickedElement.classList.remove("dice-4");
-                clickedElement.classList.remove("dice-5");
-                clickedElement.classList.remove("dice-6");
                 clickedElement.classList.add("dice-" + random);
                 //For animation restart
                 const elm = clickedElement;
@@ -100,14 +96,10 @@ function selectDice() {
 function rerollSelected() {
     selectedDice.forEach(dice => {
         const random = Math.floor(Math.random() * 6) + 1;
+        diceClass = "dice-" + dice.dataset.value
         dice.dataset.value = random;
+        dice.classList.remove(diceClass)
         dice.classList.remove("selected");
-        dice.classList.remove("dice-1");
-        dice.classList.remove("dice-2");
-        dice.classList.remove("dice-3");
-        dice.classList.remove("dice-4");
-        dice.classList.remove("dice-5");
-        dice.classList.remove("dice-6");
         dice.classList.add("dice-" + random);
         //For animation restart
         const elm = dice;
@@ -127,14 +119,10 @@ function rerollWithValue() {
         const currentValue = parseInt(dice.dataset.value);
         if (currentValue <= rerollThreshold) {
             const random = Math.floor(Math.random() * 6) + 1;
+            diceClass = "dice-" + dice.dataset.value
             dice.dataset.value = random;
+            dice.classList.remove(diceClass)
             dice.classList.remove("selected");
-            dice.classList.remove("dice-1");
-            dice.classList.remove("dice-2");
-            dice.classList.remove("dice-3");
-            dice.classList.remove("dice-4");
-            dice.classList.remove("dice-5");
-            dice.classList.remove("dice-6");
             dice.classList.add("dice-" + random);
             //For animation restart
             const elm = dice;
